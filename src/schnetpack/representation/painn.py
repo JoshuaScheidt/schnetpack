@@ -52,6 +52,8 @@ class PaiNNInteraction(nn.Module):
         """
         # inter-atomic
         x = self.interatomic_context_net(q)
+        idx_i = idx_i.long()
+        idx_j = idx_j.long()
         xj = x[idx_j]
         muj = mu[idx_j]
         x = Wij * xj
