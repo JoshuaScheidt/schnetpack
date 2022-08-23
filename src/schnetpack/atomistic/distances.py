@@ -16,7 +16,8 @@ class PairwiseDistances(nn.Module):
         offsets = inputs[properties.offsets]
         idx_i = inputs[properties.idx_i]
         idx_j = inputs[properties.idx_j]
-
+        idx_i = idx_i.long()
+        idx_j = idx_j.long()
         Rij = R[idx_j] - R[idx_i] + offsets
         inputs[properties.Rij] = Rij
         return inputs

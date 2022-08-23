@@ -20,7 +20,7 @@ data:
       remove_mean: True
     - _target_: schnetpack.transform.ASENeighborList
       cutoff: ${globals.cutoff}
-    - _target_: schnetpack.transform.CastTo32
+    - _target_: schnetpack.transform.CastTo32 
 
 model:
   output_modules:
@@ -29,7 +29,7 @@ model:
       n_in: ${model.representation.n_atom_basis}
       aggregation_mode: sum
   postprocessors:
-    - _target_: schnetpack.transform.CastTo64
+    - _target_: schnetpack.transform.CastTo64 
     - _target_: schnetpack.transform.AddOffsets
       property: ${globals.property}
       add_mean: True
